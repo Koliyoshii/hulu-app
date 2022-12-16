@@ -5,15 +5,15 @@ const Thumbnail = ({ result }) => {
   const BASE_URL = "http://image.tmdb.org/t/p/original";
 
   return (
-    <div className="p-4 group cursor-pointer transition duration-200 ease-in transform sm:hover:scale-105 hover:z-50 3xl:max-w-xl">
+    <div className="p-3 group cursor-pointer transition duration-200 ease-in transform sm:hover:scale-105 hover:z-50 3xl:max-w-xl">
       <Image className=" shadow-md "
         src={
           `${BASE_URL}${result.backdrop_path || result.poster_path}?api_key=${process.env.API_KEY}` ||
           `${BASE_URL}${result.poster_path}`
         }
         alt="Movie Thumbnail"
-        width={1920}
-        height={720}
+        width={720}
+        height={480}
       />
       <div className="p-4">
         <p className=" truncate max-w-md">{result.overview}</p>
