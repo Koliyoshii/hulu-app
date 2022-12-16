@@ -11,6 +11,11 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'api.themoviedb.org',
       },
+      {
+        protocol: 'http',
+        hostname: 'image.tmdb.org',
+        pathname: '/t/p/original/**s'
+      },
     ],
   },
 }
