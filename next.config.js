@@ -14,7 +14,7 @@ const nextConfig = {
       {
         protocol: 'http',
         hostname: 'image.tmdb.org',
-        pathname: '/t/p/original/**s'
+        pathname: '/t/p/original/**'
       },
     ],
   },
