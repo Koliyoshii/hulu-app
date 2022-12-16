@@ -6,14 +6,12 @@ const Thumbnail = ({ result }) => {
 
   return (
     <div className="p-4 group cursor-pointer transition duration-200 ease-in transform sm:hover:scale-105 hover:z-50">
-      <Image
+      <img
         src={
-          `${BASE_URL}${result.backdrop_path || result.poster_path}` ||
-          `${BASE_URL}${result.poster_path}`
+          `${BASE_URL}${result.backdrop_path || result.poster_path}?api_key=${process.env.API_KEY}` ||
+          `${BASE_URL}${result.poster_path}?api_key=${process.env.API_KEY}`
         }
-        alt="Movie Thumnail"
-        width={480}
-        height={720}
+        alt="Movie Thumbnail"
       />
       <div className="p-4">
         <p className=" truncate max-w-md">{result.overview}</p>
