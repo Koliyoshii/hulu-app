@@ -2,16 +2,18 @@ import { HandThumbUpIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
 const Thumbnail = ({ result }) => {
-  const BASE_URL = "http://image.tmdb.org/t/p/w500/";
+  const BASE_URL = "http://image.tmdb.org/t/p/w1920/";
 
   return (
     <div className="p-4 group cursor-pointer transition duration-200 ease-in transform sm:hover:scale-105 hover:z-50">
-      <img
+      <Image
         src={
           `${BASE_URL}${result.backdrop_path || result.poster_path}?api_key=${process.env.API_KEY}` ||
           `${BASE_URL}${result.poster_path}?api_key=${process.env.API_KEY}`
         }
         alt="Movie Thumbnail"
+        width={1920}
+        height={720}
       />
       <div className="p-4">
         <p className=" truncate max-w-md">{result.overview}</p>
