@@ -86,7 +86,7 @@ function MovieDetail({ movie }) {
             height={720}
           />
 
-          <div className="hidden xl:block absolute top-0 right-0 bg-gradient-to-l from-[#06202A] h-full w-full max-w-3xl" />
+          <div className="hidden xl:block absolute top-0 right-0 bg-gradient-to-l from-[#06202A] to-transparent h-full w-full max-w-3xl" />
         </div>
 
         <div className="z-10 py-4 -ml-48 max-w-3xl">
