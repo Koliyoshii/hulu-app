@@ -68,7 +68,7 @@ function MovieDetail({ movie }) {
           {homepage.trim().length > 0 && (
             <div className="flex flex-row cursor-pointer group hover:text-white">
               <a href={homepage} rel="noreferrer" target="_blank">
-                Stream {title} now here
+                More information about {title}
               </a>
             </div>
           )}
@@ -108,6 +108,13 @@ function MovieDetail({ movie }) {
             <p className="flex items-center py-4">
               {`Status: ${status}`} • {release_date || first_air_date}
             </p>
+            {homepage.trim().length > 0 && (
+            <div className="flex flex-row cursor-pointer group hover:text-white">
+              <a href={homepage} rel="noreferrer" target="_blank">
+                More information about {title}
+              </a>
+            </div>
+          )}
           </div>
         </div>
       </div>
