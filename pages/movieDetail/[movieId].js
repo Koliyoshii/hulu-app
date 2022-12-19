@@ -4,7 +4,7 @@ import { getMovieById } from "../../lib/data-fetching";
 
 function MovieDetailPage({ movie }) {
     const results = DUMMY_DATA; 
-    console.log(movie)
+    console.log(movie.success)
     if (movie.success === 'false') {
       return(
         <div className="py-20">
