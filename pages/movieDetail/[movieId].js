@@ -7,7 +7,7 @@ function MovieDetailPage({ movie }) {
     console.log(movie)
   return (
     <div className="py-20">
-        {/* <MovieDetail movie={movie} /> */}
+        <MovieDetail movie={movie} />
     </div>
   )
 }

@@ -29,7 +29,7 @@ export async function getServerSideProps(context) {
   const genre = context.query.genre;
   //const request = [];
   const request = await getMovies(genre);
-  console.log(request);
+  //console.log(request);
  /*  const request = await fetch(
     `https://api.themoviedb.org/3${
       requests[genre]?.url || requests.fetchTrending.url
