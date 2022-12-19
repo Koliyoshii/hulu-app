@@ -97,10 +97,10 @@ function MovieDetail({ movie }) {
           </h4>
 
           <div>
-            <h4 className="flex items-center">
+            <p className="flex items-center">
               <ClockIcon className="h-5 mx-2" />
               <p>{runtime} minutes</p>
-            </h4>
+            </p>
             <p className="flex items-center">
               <HandThumbUpIcon className="h-5 mx-2" /> {vote_count} •{" "}
               <ArrowTrendingUpIcon className="h-5 mx-2" /> {popularity}
@@ -110,7 +110,7 @@ function MovieDetail({ movie }) {
             </p>
             {homepage.trim().length > 0 && (
               <div className="flex flex-row cursor-pointer group hover:text-white">
-                <a href={homepage} rel="noreferrer" target="_blank">
+                <a className="font-semibold" href={homepage} rel="noreferrer" target="_blank">
                   More information about {title}
                 </a>
               </div>
