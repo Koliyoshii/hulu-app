@@ -15,7 +15,7 @@ function MovieDetailPage({ movie }) {
 export async function getServerSideProps(context) {
   const id = context.query.movieId;
   //const request = [];
-  const request = getMovieById(id);
+  const request = await getMovieById(id);
   console.log("Movie >>> ", request)
 
   return {
