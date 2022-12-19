@@ -1,11 +1,12 @@
 import MovieDetail from "../../components/MovieDetail/[movieId]";
-import { DUMMY_DATA } from "../../lib/DUMMY_DATA"
+import { DUMMY_DATA } from "../../lib/DUMMY_DATA";
+import { getMovieById } from "../../lib/data-fetching";
 
-function MovieDetailPage() {
+function MovieDetailPage({ movie }) {
     const results = DUMMY_DATA; 
   return (
     <div className="py-20">
-        <MovieDetail movie={DUMMY_DATA[0]} />
+        <MovieDetail movie={movie} />
     </div>
   )
 }
@@ -18,7 +19,7 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      results: request,
+      movie: request,
     },
   };
 }
