@@ -3,9 +3,11 @@ import Header from "../components/Header/Header";
 import Navbar from "../components/Navbar/Navbar";
 import Results from "../components/Results/Results";
 import requests from "../lib/requests";
+import { DUMMY_DATA } from "../lib/DUMMY_DATA";
+import { getMovies } from "../lib/data-fetching";
 
 export default function Home({ results }) {
-  
+  const request = DUMMY_DATA;
   return (
     <div>
       <Head>
@@ -17,11 +19,6 @@ export default function Home({ results }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Header */}
-      <Header />
-      {/* Navbar */}
-      <Navbar />
-
       {/* Results */}
       <Results results={results}/>
     </div>
@@ -31,14 +28,13 @@ export default function Home({ results }) {
 export async function getServerSideProps(context) {
   const genre = context.query.genre;
   //const request = [];
-
-  const request = await fetch(
+  const request = await getMovies(genre);
+  console.log(request);
+ /*  const request = await fetch(
     `https://api.themoviedb.org/3${
       requests[genre]?.url || requests.fetchTrending.url
     }`
-  ).then((res) => res.json());
-
-
+  ).then((res) => res.json());  */
   return {
     props: {
       results: request,
