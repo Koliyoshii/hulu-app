@@ -2,7 +2,7 @@ import { HandThumbUpIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
 function MovieDetail({ movie }) {
-  const {
+  /* const {
     backdrop_path,
     poster_path,
     adult,
@@ -14,7 +14,7 @@ function MovieDetail({ movie }) {
     first_air_date,
     vote_average,
     vote_count,
-  } = movie;
+  } = movie; */
   console.log(movie);
 
   const BASE_URL = "http://image.tmdb.org/t/p/original";
