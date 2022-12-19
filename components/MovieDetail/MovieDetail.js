@@ -13,17 +13,14 @@ function MovieDetail({ movie }) {
     backdrop_path,
     poster_path,
     homepage,
-    adult,
     title,
     runtime,
     genres,
     overview,
-    media_type,
     popularity,
     release_date,
     status,
     first_air_date,
-    vote_average,
     vote_count,
   } = movie;
   console.log(movie);
@@ -95,12 +92,15 @@ function MovieDetail({ movie }) {
         <div className="z-10 py-4 -ml-48 max-w-3xl">
           <h2 className="font-bold text-2xl py-4">{title}</h2>
           <h3 className="py-4">{overview}</h3>
-          <h4 className="flex items-center">
-            <ClockIcon className="h-5 mx-2" />
-            <p>{runtime} minutes</p>
+          <h4 className="font-semibold py-4">
+            {genres.map((genre) => `| ${genre.name} `)}
           </h4>
 
           <div>
+            <h4 className="flex items-center">
+              <ClockIcon className="h-5 mx-2" />
+              <p>{runtime} minutes</p>
+            </h4>
             <p className="flex items-center">
               <HandThumbUpIcon className="h-5 mx-2" /> {vote_count} •{" "}
               <ArrowTrendingUpIcon className="h-5 mx-2" /> {popularity}
@@ -109,12 +109,12 @@ function MovieDetail({ movie }) {
               {`Status: ${status}`} • {release_date || first_air_date}
             </p>
             {homepage.trim().length > 0 && (
-            <div className="flex flex-row cursor-pointer group hover:text-white">
-              <a href={homepage} rel="noreferrer" target="_blank">
-                More information about {title}
-              </a>
-            </div>
-          )}
+              <div className="flex flex-row cursor-pointer group hover:text-white">
+                <a href={homepage} rel="noreferrer" target="_blank">
+                  More information about {title}
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>

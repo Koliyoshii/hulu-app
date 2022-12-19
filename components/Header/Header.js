@@ -5,7 +5,7 @@ import { HomeIcon, BoltIcon, CheckBadgeIcon, Square3Stack3DIcon, MagnifyingGlass
 
 function Header() {
   return (
-    <header className='flex flex-col md:flex-row m-5 justify-between items-center h-auto'>
+    <header className='flex flex-col bg-[#06202A] md:flex-row m-5 justify-between items-center h-auto'>
         <div className='flex flex-grow justify-evenly max-w-2xl'>
             <HeaderItem title={"HOME"} Icon={HomeIcon}  />
             <HeaderItem title={"TRENDING"} Icon={BoltIcon}  />
