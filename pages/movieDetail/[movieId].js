@@ -5,6 +5,13 @@ import { getMovieById } from "../../lib/data-fetching";
 function MovieDetailPage({ movie }) {
     const results = DUMMY_DATA; 
     console.log(movie)
+    if (movie.success === 'false') {
+      return(
+        <div className="py-20">
+        <p>Movie could not be found.</p>
+    </div>
+      )
+    }
   return (
     <div className="py-20">
         <MovieDetail movie={movie} />
